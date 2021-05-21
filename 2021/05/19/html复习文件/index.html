@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="MarsYear"><meta name="copyright" content="MarsYear"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>HTML复习 | MarsYearの怪盗団</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.24/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_j5gk85dg4pf.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link rel="icon" href="/images/gd.ico"><link rel="mask-icon" href="/images/gd.ico" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"example.com","root":"/","title":["Mars","Year","の","怪盗団"],"version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><script src="//at.alicdn.com/t/font_2562370_5ieunq9xazl.js" async></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=UA-121354150-1"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-121354150-1');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="工作这么久了，框架用的太多，基础知识都忘记了，按照网上的面试题整理一下。(才不会说是我太笨了)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML复习">
+<meta property="og:url" content="http://example.com/2021/05/19/html%E5%A4%8D%E4%B9%A0%E6%96%87%E4%BB%B6/index.html">
+<meta property="og:site_name" content="MarsYearの怪盗団">
+<meta property="og:description" content="工作这么久了，框架用的太多，基础知识都忘记了，按照网上的面试题整理一下。(才不会说是我太笨了)">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-19T08:46:51.000Z">
+<meta property="article:modified_time" content="2021-05-21T06:25:48.000Z">
+<meta property="article:author" content="MarsYear">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="MarsYear"><img width="96" loading="lazy" src="/images/avatar.png" alt="MarsYear"><span class="site-author-status" title="Looking for dawn.">🌑</span></a><div class="site-author-name"><a href="/about/">MarsYear</a></div><span class="site-name">MarsYearの怪盗団</span><sub class="site-subtitle">万物皆虚，万物皆允</sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">2</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/MarsYear" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/huo-xing-year/" title="知乎" target="_blank" style="color:#0084FF"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhihu-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/6686944" title="哔哩哔哩" target="_blank" style="color:#FF8EB3"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bilibili-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com/xiaowen76977304" title="Twitter" target="_blank" style="color:#1da1f2"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:997519401@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:997519401@qq.com" title="PSN" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-playstation--"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a><a class="links-item hty-icon-button" href="/girls/" title="推荐的游戏" style="color:hotpink"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-94"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E8%AF%AD%E4%B9%89%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">标签语义化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DOCTYPE-%E2%BD%82%E6%A1%A3%E7%B1%BB%E5%9E%8B-%E7%9A%84%E4%BD%9C%E2%BD%A4"><span class="toc-number">2.</span> <span class="toc-text">DOCTYPE(⽂档类型)的作⽤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#script%E6%A0%87%E7%AD%BE%E4%B8%ADdefer%E5%92%8Casync%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">script标签中defer和async的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#meta%E6%A0%87%E7%AD%BE"><span class="toc-number">4.</span> <span class="toc-text">meta标签</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84meta%E6%A0%87%E7%AD%BE"><span class="toc-number">4.1.</span> <span class="toc-text">常用的meta标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text">content的参数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5%E6%9B%B4%E6%96%B0%E5%86%85%E5%AE%B9"><span class="toc-number">5.</span> <span class="toc-text">HTML5更新内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE"><span class="toc-number">5.1.</span> <span class="toc-text">语义化标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%A0%87%E7%AD%BE"><span class="toc-number">5.2.</span> <span class="toc-text">媒体标签</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#display-block-display-inline-display-inline-block%E5%8C%BA%E5%88%AB"><span class="toc-number">6.</span> <span class="toc-text">display:block display:inline display:inline-block区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5%E7%A6%BB%E7%BA%BF%E5%AD%98%E5%82%A8%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%EF%BC%8C%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">7.</span> <span class="toc-text">HTML5离线存储怎么使用，原理是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">7.1.</span> <span class="toc-text">原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">7.1.1.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A"><span class="toc-number">7.1.2.</span> <span class="toc-text">解释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0%E7%BC%93%E5%AD%98"><span class="toc-number">7.2.</span> <span class="toc-text">如何更新缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">7.3.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%80%8E%E4%B9%88%E5%AF%B9HTML5%E7%A6%BB%E7%BA%BF%E7%BC%93%E5%AD%98%E8%B5%84%E6%BA%90%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E5%92%8C%E5%8A%A0%E8%BD%BD"><span class="toc-number">8.</span> <span class="toc-text">浏览器怎么对HTML5离线缓存资源进行管理和加载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#title%E4%B8%8Eh1%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8Cb%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8Ci%E4%B8%8Eem%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">9.</span> <span class="toc-text">title与h1的区别，b与strong的区别，i与em的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#iframe%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9"><span class="toc-number">10.</span> <span class="toc-text">iframe有哪些优点和缺点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#label%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E6%80%8E%E4%B9%88%E7%94%A8%EF%BC%9F"><span class="toc-number">11.</span> <span class="toc-text">label的作用是什么？怎么用？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Canvas%E5%92%8CSVG%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">12.</span> <span class="toc-text">Canvas和SVG有什么区别？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#head%E4%B8%AD%E5%BF%85%E4%B8%8D%E5%8F%AF%E5%B0%91%E7%9A%84%E6%A0%87%E7%AD%BE%E6%98%AF%EF%BC%9F"><span class="toc-number">13.</span> <span class="toc-text">head中必不可少的标签是？</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://example.com/2021/05/19/html%E5%A4%8D%E4%B9%A0%E6%96%87%E4%BB%B6/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="MarsYear"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="MarsYearの怪盗団"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">HTML复习<a class="post-edit-link" href="https://github.com/YunYouJun/yunyoujun.github.io/tree/hexo/source/_posts/html复习文件.md" target="_blank" title="Edit this post" rel="noopener"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-edit-line"></use></svg></a></h1><div class="post-meta"><div class="post-time" style="display:inline-block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="Created: 2021-05-19 16:46:51" itemprop="dateCreated datePublished" datetime="2021-05-19T16:46:51+08:00">2021-05-19</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="Modified: 2021-05-21 14:25:48" itemprop="dateModified" datetime="2021-05-21T14:25:48+08:00">2021-05-21</time></div><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E5%89%8D%E7%AB%AF/" style="--text-color:#B22C00" itemprop="url" rel="index"><span itemprop="text">前端</span></a></span> > <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E5%89%8D%E7%AB%AF/HTML/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">HTML</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E5%89%8D%E7%AB%AF/" style="--text-color:#5B8FF9"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">前端</span></a><a class="tag-item" href="/tags/HTML/" style="--text-color:#61DDAA"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">HTML</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><p>工作这么久了，框架用的太多，基础知识都忘记了，按照网上的面试题整理一下。<del>(才不会说是我太笨了)</del></p>
+<span id="more"></span>
+
+<hr>
+<h1 id="标签语义化"><a href="#标签语义化" class="headerlink" title="标签语义化"></a>标签语义化</h1><blockquote>
+<p><strong>意义：</strong>在适当的内容使用适当的标签.<br>  <strong>优点：</strong>利于SEO优化，方便搜索引擎的爬虫抓取有效信息。支持读屏软件，可以根据文章自动生成目录，对开发者友好，语义化标签便于开发和维护.<br>  <strong>常见的语义化标签：</strong> <code>&lt;header&gt;</code> <code>&lt;nav&gt;</code> <code>&lt;section&gt;</code> <code>&lt;main&gt;</code> <code>&lt;artical&gt;</code> <code>&lt;aside&gt;</code> <code>&lt;footer&gt;</code></p>
+</blockquote>
+<hr>
+<h1 id="DOCTYPE-⽂档类型-的作⽤"><a href="#DOCTYPE-⽂档类型-的作⽤" class="headerlink" title="DOCTYPE(⽂档类型)的作⽤"></a>DOCTYPE(⽂档类型)的作⽤</h1><blockquote>
+<p>目的：是H5中一种通用标记语言的文档类型声明，目的是为了以什么样的文档类型(html.xhtml)来解析文档</p>
+</blockquote>
+<hr>
+<h1 id="script标签中defer和async的区别"><a href="#script标签中defer和async的区别" class="headerlink" title="script标签中defer和async的区别"></a>script标签中defer和async的区别</h1><blockquote>
+<p>如果没有<code>defer</code>或者<code>async</code>的话，浏览器会立即加载并执行脚本，意思就是不等待后续加载的文档元素，读到就开始执行，这样会阻塞后续文档的加载</p>
+</blockquote>
+<blockquote>
+<p><strong>defer和async区别</strong></p>
+<ol>
+<li>带有async属性的标签不能保证加载顺序，多个带有defer的标签，按照加载顺序执行</li>
+<li>async属性表示后续文档的加载和执行与js脚本的加载和执行是并行的</li>
+<li>defer属性表示后续文档的加载和js脚本加载是并行的，但是js脚本的执行要等到文档解析完成之后，DOMContentLoaded事件触发执行之前</li>
+</ol>
+</blockquote>
+<hr>
+<h1 id="meta标签"><a href="#meta标签" class="headerlink" title="meta标签"></a>meta标签</h1><h2 id="常用的meta标签"><a href="#常用的meta标签" class="headerlink" title="常用的meta标签"></a>常用的meta标签</h2><blockquote>
+<ul>
+<li><strong><code>&lt;meta charset=&quot;UTF-8&quot; &gt;</code></strong> 表示html文档的编码类型</li>
+<li><strong><code>&lt;meta name=&quot;keywords&quot; content=&quot;关键词&quot; /&gt;</code></strong> 表示html文档的关键词</li>
+<li><strong><code>&lt;meta name=&quot;description&quot; content=&quot;页面描述&quot; /&gt;</code></strong> 表示html文档的页面描述</li>
+<li><strong><code>&lt;meta name=&quot;refresh&quot; content=&quot;0;url&quot; /&gt;</code></strong> 表示html文档的页面重定向和刷新</li>
+<li><strong><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot; /&gt;</code></strong> 适配移动端，开发人员可以控制视口的大小和比例</li>
+</ul>
+</blockquote>
+<h2 id="content的参数"><a href="#content的参数" class="headerlink" title="content的参数"></a>content的参数</h2><blockquote>
+<ul>
+<li><code>width</code>, <code>height</code>, <code>initial-scale(初始缩放比例)</code>, <code>maximum-scale(最大缩放比例)</code>, <code>minimum-scale(最小缩放比例)</code>, <code>user-scalable(是否允许用户缩放)</code></li>
+<li><meta name="robots" content="index,follow" /> 搜索引擎方式 </li>
+<li><code>content</code>的参数</li>
+<li><code>all</code>(文件将被检索，且页面上的链接可以被查询)</li>
+<li><code>none</code>(文件将不会检索，且页面上的链接不可以被查询)</li>
+<li><code>index</code>(文件将被检索)</li>
+<li><code>follow</code>(页面上的链接可以被查询)</li>
+<li><code>noindex</code>(文件将不被检索)</li>
+<li><code>nofollow</code>(页面上的链接不可以被查询)</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="HTML5更新内容"><a href="#HTML5更新内容" class="headerlink" title="HTML5更新内容"></a>HTML5更新内容</h1><h2 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h2><h2 id="媒体标签"><a href="#媒体标签" class="headerlink" title="媒体标签"></a>媒体标签</h2><ol>
+<li><code>audio(音频)</code> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio src=<span class="string">&#x27;&#x27;</span> controls autoplay loop=<span class="string">&#x27;true&#x27;</span>&gt;&lt;/audio&gt;</span><br></pre></td></tr></table></figure></li>
+<li><code>属性：</code>controls 控制面板 autoplay 自动播放 loop=’true’循环播放</li>
+<li><code>video(视频)</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;video src=<span class="string">&#x27;&#x27;</span> poster=<span class="string">&#x27;imgs/aa.jpg&#x27;</span> controls&gt;&lt;/video&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">video</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&#x27;aa.flv&#x27;</span> <span class="attr">type</span>=<span class="string">&#x27;video/flv&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">source</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&#x27;aa.mp4&#x27;</span> <span class="attr">type</span>=<span class="string">&#x27;video/mp4&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">source</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
+<li><code>表单</code></li>
+<li><code>进度条，度量器</code></li>
+<li><code>DOM查询操作</code></li>
+<li><code>Web存储</code></li>
+<li><code>其他</code></li>
+</ol>
+<hr>
+<h1 id="display-block-display-inline-display-inline-block区别"><a href="#display-block-display-inline-display-inline-block区别" class="headerlink" title="display:block display:inline display:inline-block区别"></a>display:block display:inline display:inline-block区别</h1><blockquote>
+<ol>
+<li><strong><code>block：</code></strong> 独占一行，多个元素会另起一行，可以设置<code>width</code>，<code>height</code> <code>margin</code>和<code>padding</code>属性</li>
+<li><strong><code>inline：</code></strong> 不会独占一行，设置<code>width</code>，<code>height</code>无效，可以设置水平方向的<code>margin</code>和<code>padding</code>,不可以设置垂直方向的<code>margin</code>和<code>padding</code></li>
+<li><strong><code>inline-block：</code></strong> 将对象设置为<code>inline</code>对象，但对象内容作为<code>block</code>对象呈现</li>
+</ol>
+</blockquote>
+<hr>
+<h1 id="HTML5离线存储怎么使用，原理是什么"><a href="#HTML5离线存储怎么使用，原理是什么" class="headerlink" title="HTML5离线存储怎么使用，原理是什么"></a>HTML5离线存储怎么使用，原理是什么</h1><blockquote>
+<p>离线存储指的是用户没有网络连接时，可以正常访问站点或应用，在用户网络连接时，更新缓存文件</p>
+</blockquote>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote>
+<p><code>HTML5</code>的离线存储是基于一个新建的<code>.appcache</code>文件的缓存机制，通过这个文件上的解析清单离线存储资源，这些资源就会像<code>cookie</code>一样缓存下来。之后如果网络处于离线状态，就会通过被离线存储的数据进行页面展示。</p>
+</blockquote>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><blockquote>
+<ol>
+<li>创建一个和<code>html</code>同名的<code>manifest=&#39;index.mainifest&#39;</code>,在页面头部下方加入<code>mainifest</code>的属性<ol start="2">
+<li>在<code>cache.manifest</code>文件下编写离线存储的资源<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line"> #v0<span class="number">.11</span></span><br><span class="line"> <span class="attr">CACHE</span>:</span><br><span class="line"> js/app.js</span><br><span class="line"> css/style.css</span><br><span class="line"> <span class="attr">NETWORK</span>:</span><br><span class="line"> resourse/logo.png</span><br><span class="line"> <span class="attr">FALLBACK</span>:</span><br><span class="line"> <span class="regexp">/ /</span>offline.html</span><br></pre></td></tr></table></figure></li>
+<li>在离线状态，操作<code>window.applicationCache</code> 进行离线缓存</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><blockquote>
+<ul>
+<li><code>CACHE：</code>需要离线缓存的资源列表，由于包含mainifest文件页面的将被自动存储下来，所以不需要把页面自身也放入列表</li>
+<li><code>NETWORK：</code>表示在他下面的资源只有在在线情况才能访问，他们不会被离线存储，所以离线情况下无法使用这些资源。如果在<code>CACHE</code>和<code>NETWORK</code>中有同一个资源，那它还是会被缓存，说明<code>CACHE</code>的优先级更高</li>
+<li><code>FALLBACK：</code>如果访问第一个资源失败了，就去访问<code>FALLBACK</code>的资源</li>
+</ul>
+</blockquote>
+<h2 id="如何更新缓存"><a href="#如何更新缓存" class="headerlink" title="如何更新缓存"></a>如何更新缓存</h2><blockquote>
+<p>（1）更新<code>mainifest</code>文件<br>（2）通过<code>javascript</code>进行操作<br>（3）清除浏览器缓存</p>
+</blockquote>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><blockquote>
+<p>（1）每个浏览器的缓存大小不一样（浏览器设置的大小为5MB）<br>（2）如果<code>mainifest</code>文件，或内部列举的某一个文件下载失败，那整个更新过程都失败，浏览器继续使用老的缓存。<br>（3）引用<code>mainifest</code>的<code>html</code>必须与<code>mainifest</code>文件同源<br>（4）<code>FALLBACK</code>的文件必须与<code>mainifest</code>文件同源<br>（5）当一个资源被缓存后，该浏览器直接访问这个绝对路径也会访问缓存中的资源<br>（6）站点中的其他页面即使没有设置<code>mainifest</code>属性，请求资源如果在缓存中也会从缓中访问<br>（7）当<code>mainifest</code>文件发生改变时，资源请求本身也会触发更新</p>
+</blockquote>
+<hr>
+<h1 id="浏览器怎么对HTML5离线缓存资源进行管理和加载"><a href="#浏览器怎么对HTML5离线缓存资源进行管理和加载" class="headerlink" title="浏览器怎么对HTML5离线缓存资源进行管理和加载"></a>浏览器怎么对HTML5离线缓存资源进行管理和加载</h1><blockquote>
+<ul>
+<li>网络在线的情况下，浏览器发现<code>html</code>头部有<code>mainifest</code>属性，他会请求<code>mainifest</code>文件，如果是第一次访问，那浏览器会根据<code>mainifest</code>的文件内容下载相应资源并缓存。如果已经访问过app并进行了离线缓存，那浏览器直接使用离线资源加载页面，然后对比新的mainifest文件和旧的mainifest文件，如果没有改变，不更新，如果新版有改变就重新下载mainifest文件中的资源并进行离线缓存</li>
+<li>网络如果离线，直接使用离线存储资源</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="title与h1的区别，b与strong的区别，i与em的区别"><a href="#title与h1的区别，b与strong的区别，i与em的区别" class="headerlink" title="title与h1的区别，b与strong的区别，i与em的区别"></a>title与h1的区别，b与strong的区别，i与em的区别</h1><blockquote>
+<ul>
+<li><code>title</code>没有明确意义，只是一个标题。<code>h1</code>表示层次分明标题，对页面信息的抓取也有很大影响</li>
+<li><code>strong</code>标明重点内容，有语气加强的含义，使用设备阅读时候会重读。而<code>b</code>是展示强调内容</li>
+<li><code>i</code>内容展示为斜体，<code>em</code>表示强调的文本</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="iframe有哪些优点和缺点"><a href="#iframe有哪些优点和缺点" class="headerlink" title="iframe有哪些优点和缺点"></a>iframe有哪些优点和缺点</h1><blockquote>
+<ul>
+<li><code>iframe</code>元素会创建包含另一个文档的内联框架</li>
+</ul>
+</blockquote>
+<ul>
+<li>优点：<blockquote>
+<ol>
+<li>可以用来加载比较慢的内容（例如广告）</li>
+<li>可以是脚本进行并行下载</li>
+<li>可以实现跨子域通信</li>
+</ol>
+</blockquote>
+</li>
+<li>缺点：<blockquote>
+<ol>
+<li><code>iframe</code>会阻塞页面的onload事件</li>
+<li>无法被一些搜索引擎识别</li>
+<li>会产生很多页面，不方便管理</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h1 id="label的作用是什么？怎么用？"><a href="#label的作用是什么？怎么用？" class="headerlink" title="label的作用是什么？怎么用？"></a>label的作用是什么？怎么用？</h1><blockquote>
+<ul>
+<li><code>label</code>用来控制表单控件关系，当用户选择<code>label</code>标签时，浏览器自动将焦点转到，<code>label</code>和<code>label</code>相关的表单控件上<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label for=&quot;mobile&quot;&gt;Number:&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; id=&quot;mobile&quot;/&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="Canvas和SVG有什么区别？"><a href="#Canvas和SVG有什么区别？" class="headerlink" title="Canvas和SVG有什么区别？"></a>Canvas和SVG有什么区别？</h1><blockquote>
+<ul>
+<li><strong><code>Canvas</code></strong> 是通过<code>js</code>来绘制2d图形的方法。是通过逐像素来进行渲染的，当我们对<code>Canvas</code>进行缩放时，会出现图片锯齿或失真的情况</li>
+<li><strong><code>SVG</code></strong> 是一种通过XML来描述2D图形的语言。<code>SVG</code>寄予XML，这意味着<code>SVG DOM</code>中的每一个元素都是可用的，可以为某个元素附加监听事件。并且<code>SVG</code>保存的是图片的绘制方法，所以当图片缩放时，并不会失真。</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="head中必不可少的标签是？"><a href="#head中必不可少的标签是？" class="headerlink" title="head中必不可少的标签是？"></a>head中必不可少的标签是？</h1><blockquote>
+<ul>
+<li>标签用于定义文档头部，是所有头部信息的容器。里面包含了各种属性和信息，包括文档的标题、在Web中得位置以及和其他文档的关系，绝大多数头部信息都不会作为信息展示给读者。</li>
+<li>文档中的可用标签为<code>&lt;base&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;meta&gt;</code>, <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code>, <code>&lt;title&gt;</code>。</li>
+<li>其中<code>&lt;title&gt;</code> 定义文档的标题，它是head部分中唯一必需的元素。</li>
+</ul>
+</blockquote>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>MarsYear</li><li class="post-copyright-link"><strong>Post link: </strong><a href="http://example.com/2021/05/19/html%E5%A4%8D%E4%B9%A0%E6%96%87%E4%BB%B6/" title="HTML复习">http://example.com/2021/05/19/html%E5%A4%8D%E4%B9%A0%E6%96%87%E4%BB%B6/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> unless otherwise stated.</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2021/05/21/css%E5%A4%8D%E4%B9%A0%E6%96%87%E4%BB%B6/" rel="prev" title="CSS复习"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">CSS复习</span></a></div><div class="post-nav-item"></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎<a href="Mailto:997519401@qq.com">给我发邮件</a>与我交流。</span><br></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 </span><a class="with-love" id="animate" target="_blank" rel="noopener" href="https://sponsors.yunyoujun.cn" title="云游君的赞助者们"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></a><span class="author"> MarsYear</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v5.4.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.6.1</span></div><div class="live_time"><span>本博客已运行</span><span id="display_live_time"></span><span class="moe-text">ヽ(✿ﾟ▽ﾟ)ノ</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-05-19T14:45:10');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></div></body></html>
