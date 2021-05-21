@@ -1,2 +1,215 @@
+
+# Site
+title: MarsYearの怪盗団
+subtitle: '万物皆虚，万物皆允'
+# description: ''
+# keywords: ''
+author: MarsYear
+language: zh-CN #语言
+
+# 颜色
 colors:
-  primary: "#000000"
+  primary: "#0078E7"
+  # primary: "#6200ee"
+  bg: "#f5f5f5"
+  selection_bg: "#8e71c1" # 选取文字时的背景色
+  # 标签云中标签的起始色和结束色
+  # tag_start_color:
+  # tag_end_color:
+
+mode: auto
+
+# Favicon
+# ---------------
+favicon: /images/gd.ico
+
+# 作者信息
+avatar:
+  url: /images/avatar.png
+  status:
+    enable: true
+    emoji: 🌑
+    message: Looking for dawn.
+
+# 文章打赏
+reward:
+  enable: false
+  comment: 我很可爱，请给我钱
+
+comment:
+  tips:
+    - 如果您有任何关于博客内容的相关讨论，欢迎<a href="Mailto:997519401@qq.com">给我发邮件</a>与我交流。
+
+# 首页标语动画UI
+banner:
+  enable: true
+  title: 
+  - Mars
+  - Year
+  - の
+  - 怪盗団
+  src: /js/ui/banner.js
+  border: true
+  cloud:
+    enable: true
+    color: "white"
+  go_down:
+    enable: true
+    icon: icon-arrow-down-s-line
+
+# 社交图标
+social:
+  - name: GitHub
+    link: https://github.com/MarsYear
+    icon: icon-github-line
+    color: "#6e5494"
+  - name: 知乎
+    link: https://www.zhihu.com/people/huo-xing-year/
+    icon: icon-zhihu-line
+    color: "#0084FF"
+  - name: 哔哩哔哩
+    link: https://space.bilibili.com/6686944
+    icon: icon-bilibili-line
+    color: "#FF8EB3"
+  # - name: 微信
+  #   link: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/about/white-qrcode-and-search.jpg
+  #   icon: icon-wechat-2-line
+  #   color: "#1AAD19"
+  - name: Twitter
+    link: https://twitter.com/xiaowen76977304
+    icon: icon-twitter-line
+    color: "#1da1f2"
+  - name: E-Mail
+    link: mailto:997519401@qq.com
+    icon: icon-mail-line
+    color: "#8E71C1"
+
+# 标语（在文章最下方）
+notice:
+  enable: false
+  content: 谢谢你这么忙还来看我.
+
+# 评论系统
+waline:
+  enable: false
+  serverURL: https://waline.marsyear.cn # Waline 的服务端地址。
+  visitor: true # 访问量统计
+  comment: true # 评论
+  avatarCDN: https://cdn.v2ex.com/gravatar/ # 设置 Gravatar 头像 CDN 地址。
+  placeholder: 正在测试中，请稍后 # 评论框 占位提示符。
+  requiredFields: ["nick"] # 设置必填项，默认匿名，可选值 ['nick', 'mail']
+
+github_issues:
+  enable: false
+
+github_discussions:
+  enable: false
+
+disqusjs:
+  enable: false
+  shortname: yunyoujun
+  apikey: ouoGQCaamOKdJgyZU5DKcpFnRIg3SNzvk0nwygPtlcTRJuE68c8igvrZGW4wAJoN
+
+# 页脚
+footer:
+  since: 2021
+  live_time:
+    enable: true
+    prefix: 本博客已运行
+    suffix: ヽ(✿ﾟ▽ﾟ)ノ
+    start_time: "2021-05-19T14:45:10"
+  icon:
+    url: https://sponsors.yunyoujun.cn
+    title: 云游君的赞助者们
+  # 备案号
+  beian:
+    enable: false
+    icp: ''
+  # 支持   
+  support:
+    enable: false
+    title: 又拍云
+    link: https://www.upyun.com
+    logo: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/logo/upyun-logo.png
+    prefix: 本网站由
+    suffix: 提供 CDN 加速
+  custom_text:
+
+# 彩色标签云代替原生标签云
+wordcloud:
+  enable: false
+
+# 引擎搜索
+engine_search:
+  enable: false
+  # href: "https://www.google.com/search?q=site:"
+  # href: "https://www.baidu.com/s?wd=site:"
+  # href: "https://www.bing.com/search?q=site:"
+
+# 谷歌分析
+google_analytics:
+  enable: true
+  id: UA-121354150-1
+
+google_adsense:
+  enable: true
+  client: ca-pub-2245427233262012
+
+post_edit:
+  enable: true
+  url: https://github.com/YunYouJun/yunyoujun.github.io/tree/hexo/source/
+
+albums:
+  enable: true
+
+girls:
+  enable: true
+
+# 主题色
+tags:
+  前端: '#5B8FF9'
+  HTML: '#61DDAA'
+  JS: '#65789B'
+  React: '#F6BD16'
+  Echarts: '#7262fd'
+  Canvas: '#78D3F8'
+  Antd: '#9661BC'
+  随笔: '#F6903D'
+  游戏: '#008685'
+  分享: '#F08BB4'
+  宠物: '#FFE0C7'
+
+categories:
+  前端: "#B22C00"
+  游戏: "#56167D"
+  随笔: "#1E3388"
+
+pages:
+  - name: 我的小伙伴们
+    url: /links/
+    icon: icon-genderless-line
+    color: dodgerblue
+  - name: 推荐的游戏
+    url: /girls/
+    icon: icon-women-line
+    color: hotpink
+
+menu:
+  custom:
+    title: 留言板
+    path: /about/#comment
+    icon: icon-clipboard-line
+
+cursor:
+  enable: true
+
+baidu_push: true
+
+google_tagmanager:
+  enable: true
+  id: GTM-M9KWR9L
+
+say:
+  api: https://el-bot-api.vercel.app/api/words/young
+  hitokoto:
+    enable: false
