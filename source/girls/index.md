@@ -2,7 +2,7 @@
 layout: girls
 title: 推荐的游戏
 date: 2021-05-20 15:26:23
-banner: <span title="">排名不分先后，按游玩顺序来排</span>
+banner: <span title="">排名不分先后，推荐我喜欢的游戏</span>
 girls:
   - name: 塞尔达:旷野之息
     avatar: https://upload.wikimedia.org/wikipedia/zh/thumb/1/1a/The_Legend_of_Zelda_Breath_of_the_Wild.png/220px-The_Legend_of_Zelda_Breath_of_the_Wild.png

@@ -1,4 +1,9 @@
-
+head:
+  js:
+    async:
+      # 这里是你从 iconfont 处获得的图标链接。
+      iconfont: //at.alicdn.com/t/font_2562370_5ieunq9xazl.js
+ 
 # Site
 title: MarsYearの怪盗団
 subtitle: '万物皆虚，万物皆允'
@@ -7,7 +12,7 @@ subtitle: '万物皆虚，万物皆允'
 author: MarsYear
 language: zh-CN #语言
 
-# 颜色
+# 主题颜色
 colors:
   primary: "#0078E7"
   # primary: "#6200ee"
@@ -57,6 +62,31 @@ banner:
     enable: true
     icon: icon-arrow-down-s-line
 
+# # 背景图片
+# bg_image:
+#   enable: true
+#   url: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-0-blur-30px.jpg # recomend image related to your mode
+#   dark: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/galaxy.jpg
+#   opacity: 1
+
+# 搜索背景
+# search:
+#   modal: true
+#   bg_image: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-0-blur-30px.jpg
+#   dark_bg_image: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/mountain-blur-30px.jpg
+#   placeholder: 嘿，想要得到什么？
+
+# 光标属性
+cursor:
+  enable: true
+  # default: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/pointer.cur
+  # pointer: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/link.cur
+  # text: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/text.cur
+
+# 标语（在文章最下方）
+notice:
+  enable: false
+  content: 谢谢你这么忙还来看我.
 # 社交图标
 social:
   - name: GitHub
@@ -83,11 +113,22 @@ social:
     link: mailto:997519401@qq.com
     icon: icon-mail-line
     color: "#8E71C1"
+  - name: PSN
+    link: mailto:997519401@qq.com
+    icon: icon-playstation--
+    color: "#8E71C1"
 
-# 标语（在文章最下方）
-notice:
-  enable: false
-  content: 谢谢你这么忙还来看我.
+# 侧边图标
+pages:
+  - name: 我的小伙伴们
+    url: /links/
+    icon: icon-genderless-line
+    color: dodgerblue
+  - name: 推荐的游戏
+    url: /girls/
+    icon: icon-94
+    color: hotpink
+
 
 # 评论系统
 waline:
@@ -113,6 +154,7 @@ disqusjs:
 # 页脚
 footer:
   since: 2021
+  # 实时运行时间
   live_time:
     enable: true
     prefix: 本博客已运行
@@ -165,7 +207,7 @@ albums:
 girls:
   enable: true
 
-# 主题色
+# 标签色
 tags:
   前端: '#5B8FF9'
   HTML: '#61DDAA'
@@ -179,29 +221,17 @@ tags:
   分享: '#F08BB4'
   宠物: '#FFE0C7'
 
+# 分类色
 categories:
   前端: "#B22C00"
   游戏: "#56167D"
   随笔: "#1E3388"
-
-pages:
-  - name: 我的小伙伴们
-    url: /links/
-    icon: icon-genderless-line
-    color: dodgerblue
-  - name: 推荐的游戏
-    url: /girls/
-    icon: icon-women-line
-    color: hotpink
 
 menu:
   custom:
     title: 留言板
     path: /about/#comment
     icon: icon-clipboard-line
-
-cursor:
-  enable: true
 
 baidu_push: true
 
