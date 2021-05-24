@@ -13,7 +13,7 @@ description: 复习知识-CSS
 # BFC
 ## 什么是BFC
 > BFC(块格式化上下文)：是Web可视化渲染CSS的一部分，是布局过程中生成块级盒子的区域，也是浮动元素和其他元素交互的限定区域。
-> 简单来说具备BFC特性的元素就相当于被一个容器包裹，容器内的元素在布局上不会影响外部元素
+> 简单来说具备BFC特性的元素就相当于被一个容器包裹，容器内的元素在布局上不会影响外部元素。
 
 ## BFC常见应用
 > 1. 解决普通文档流块元素的外边距折叠问题
@@ -197,35 +197,256 @@ description: 复习知识-CSS
 ## positon属性
 ### static
 > static是position的默认属性值。如果省略position属性，浏览器就认为该元素是static属性。
-> 这时浏览器会按照源码的顺序，决定每个元素的位置，这是'正常的页面流'每个块级元素占据自己的区块，互相之间不重叠，这个位置就是元素的默认位置
-> **`要注意`** ：static定位所导致的元素位置，是浏览器决定的，所以这时候`top`,`right`,`bottom`,`left`，这四个属性无效
+> 这时浏览器会按照源码的顺序，决定每个元素的位置，这是'正常的页面流'每个块级元素占据自己的区块，互相之间不重叠，这个位置就是元素的默认位置。
+> **`要注意`** ：static定位所导致的元素位置，是浏览器决定的，所以这时候`top`,`right`,`bottom`,`left`，这四个属性无效。
 ### absolute，relative,fixed
 
 --------
 
 # 重绘和回流
 ## 浏览器渲染机制
-> - 浏览器采用流式布局
-> - 浏览器会把HTML解析成DOM，CSS解析成CSSOM，DOM和CSSOM合并产生了渲染树
+> - 浏览器采用流式布局。
+> - 浏览器会把HTML解析成DOM，CSS解析成CSSOM，DOM和CSSOM合并产生了渲染树。
 > - 有了Render Tree，我们就知道了所有节点的样式，然后计算他们的大小和位置，最后把节点渲染到页面上。
 
 ## 重绘
-> 由于节点的几何属性发生改变或者由于样式发生改变而不会影响布局的，我们称之为重绘。例如：`outline`,`visibility`,`color`,`background-color`,等，重绘的代价很高，因为浏览器必须要验证其他节点的可见性
+> 由于节点的几何属性发生改变或者由于样式发生改变而不会影响布局的，我们称之为重绘。例如：`outline`,`visibility`,`color`,`background-color`,等，重绘的代价很高，因为浏览器必须要验证其他节点的可见性。
 
 ## 回流
-> 如果几何属性或者布局发生改变就成为回流。回流是影响浏览器性能的关键，因为涉及到不分页面或者是整体页面的布局更新。一个元素的回流可能导致其所有子元素以及DOM中的其他节点，祖先节点元素的随后的回流
+> 如果几何属性或者布局发生改变就成为回流。回流是影响浏览器性能的关键，因为涉及到不分页面或者是整体页面的布局更新。一个元素的回流可能导致其所有子元素以及DOM中的其他节点，祖先节点元素的随后的回流。
 
-> 回流一定会重绘，重绘不一定回流
+> 回流一定会重绘，重绘不一定回流。
 
 ## 如何优化
-> 现代浏览器都是通过队列机制来批量更新布局，浏览器会把修改操作放到队列中，至少一个浏览器刷新(16.6ms)才会清空队列,但是当回去布局信息时，队列可能影响这些属性或方法返回值的操作，即使没有，浏览器也会清空队列，触发回流和重绘来确保返回正确的值
+> 现代浏览器都是通过队列机制来批量更新布局，浏览器会把修改操作放到队列中，至少一个浏览器刷新(16.6ms)才会清空队列,但是当回去布局信息时，队列可能影响这些属性或方法返回值的操作，即使没有，浏览器也会清空队列，触发回流和重绘来确保返回正确的值。
 主要包括以下属性或方法：
 `offsetTop`、`offsetLeft`、`offsetWidth`、`offsetHeight`、`scrollTop`、`scrollLeft`、`scrollWidth`、`scrollHeight`、`clientTop`、`clientLeft`、`clientWidth`、`clientHeight`、`width`、`height`、`getComputedStyle()`、`getBoundingClientRect()`
 所以，我们应该避免频繁的使用上述的属性，他们都会强制渲染刷新队列。
 
 ## 减少回流和重绘
 > - CSS 
-   + 使用`transform`代替`top`
-   + 使用visibility代替display:none (前者会引发重绘，后置引起回流)
+   + 使用`transform`代替`top`。
+   + 使用visibility代替display:none (前者会引发重绘，后置引起回流)。
    + 尽可能在DOM树的最末端改变class，回流不可避免，但是可以减少其影响。尽量在dom树的末端改变class，可以限值回流的范围，使其影响尽可能少的节点。
-   + 避免使用多层内联样式
+   + 避免使用多层内联样式，CSS从右往左匹配查找，避免节点层级过多。
+
+```js
+<div>
+  <a> <span></span> </a>
+</div>
+<style>
+  span {
+    color: red;
+  }
+  div > a > span {
+    color: red;
+  }
+</style>
+```
+   + 将动画效果应用到position属性为absolute或fixed的元素上，避免影响其他元素布局，这样只是重绘，不是回流。
+   + 避免使用CSS表达式，可能会引起回流。
+   + 将频繁重绘或回流的节点设置为图层，图层能够组织该节点的渲染行为影响到其他节点，例如：will-change、video、iframe等标签，浏览器会自动奖该节点变为图层。
+   + CSS3硬件加速(GPU加速)：可以让transform、opacity、filters这些动画不会引起回流重绘 。但是对于动画的其它属性，比如background-color这些，还是会引起回流重绘的，不过它还是可以提升这些动画的性能。
+> - JS
+   + 避免频繁操作样式：最好一次性重写style属性，或者将样式列表定义为class，并一次性更改class属性
+   + 避免频繁操作DOM：创建一个文档碎片(documentFragment)，在它上面应用所有DOM操作，最后再把它添加到文档中。
+   + 避免频繁读取会引发回流/重绘的属性，如果需要多次使用，用一个变量存起来。
+   + 对具有复杂动画的元素使用绝对定位：使他脱离文档流，否则会引起父级元素及后续元素频繁回流
+
+## CSS3硬件加速(GPU加速)
+> CSS3硬件加速，又叫GPU加速，是利用GPU渲染，减少CPU操作的一种优化方案。这是由于GPU中，transform等CSS属性不会触发repaint，能够大大提高网页性能。
+> 详细介绍 [CSS3硬件加速介绍](https://lz5z.com/Web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-CSS3%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F/)
+
+-----------
+
+# Flex（阮一峰Flex布局教程）
+## Flex布局是什么
+> Flex是`Flexible Box`的缩写，意思是弹性布局。为盒状模型提供最大灵活度。任何一个元素都可以指定为flex布局。
+
+```js
+.box {
+    display: flex;
+    }
+```
+
+> 行内元素也可以使用flex布局
+
+```js
+.box{
+  display: inline-flex;
+}
+```
+> 注意：设置为flex布局后，子元素的float、clear、和vertical-align属性都将失效
+
+## 容器属性
+> - flex-direction
+> - flex-wrap
+> - flex-flow
+> - justify-content
+> - align-items
+> - align-content
+
+### flex-direction属性
+> 决定项目排列方向
+> 有四个属性的值：
+   - row（默认值）：主轴为水平方向，起点在左边
+   - row-reverse：主轴为水平方向，起点在右边
+   - column：主轴为垂直方向，起点在上方
+   - column-reverse：主轴为垂直方向，起点在下方
+
+### flex-wrap属性
+> 是否换行
+> 有三个属性的值
+   - nowrap：不换行
+   - wrap：换行，第一行在上方
+   - wrap-reverse：换行，第一行在下方
+
+### flex-flow
+> 是`flex-direction`和`flex-wrap`的简写形式，默认值为row，nowrap
+```js
+.box {
+  flex-flow: <flex-direction> || <flex-wrap>;
+}
+```
+
+### justify-content属性
+> 定义了项目在主轴上的对齐方式
+```js
+.box {
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+```
+> 有五个属性的值：
+   - flex-start（默认值）：左对齐
+   - flex-end：右对齐
+   - center：居中
+   - space-between：两端对齐，项目间隔相等
+   - space-around：每个项目两侧间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+
+### align-items属性
+> 定义了项目如何在交叉轴上对齐
+```js
+.box {
+  align-items: flex-start | flex-end | center | baseline | stretch;
+}
+```
+> 有五个属性的值：
+   - stretch（默认值）：如果项目未设置高度或者设为auto，将占满整个容器高度
+   - flex-start：交叉轴起点对齐
+   - flex-end：交叉轴终点对齐
+   - center：交叉轴中点对齐
+   - baseline：项目第一行文字基线对齐
+
+### align-content属性
+> 定义了多跟轴线的对齐方式。如果项目只有一根轴线，那就不起作用
+```js
+.box {
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+```
+> 有五个属性的值：
+   - stretch（默认值）：轴线占满整个交叉轴
+   - flex-start：与交叉轴起点对齐
+   - flex-end：与交叉轴终点对齐
+   - center：与交叉轴中点对齐
+   - space-between：与交叉轴两端对齐，轴线之间间隔平均分配
+   - space-around：每根轴线两侧间隔相等
+
+## 项目属性
+> - order
+> - flex-grow
+> - flex-shrink
+> - flex-basis
+> - flex
+> - align-self
+
+### order属性
+> 定义项目的排列顺序：数值越小，排列越靠前，默认为0
+```js
+.item {
+  order: <integer>;
+}
+```
+
+### flex-grow属性
+> 定义项目的放大比例，默认为0，如果存在剩余空间也不放大
+```js
+.item {
+  flex-grow: <number>; /* default 0 */
+}
+```
+
+### flex-shrink属性
+> 定义了项目的缩小比例，默认为1，即如果空间不足，该项目将要缩小
+
+### flex-basis属性
+> 属性定义了在分配多余空间之前，项目占据的主轴空间。它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
+
+### flex属性
+> flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+
+### align-self属性
+> align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+
+
+
+# 常见的布局
+## 居中
+### 水平垂直居中方法
+- 定宽高
+
+```js
+<template>
+    <div id="app">
+        <div class="box">
+            <div class="children-box"></div>
+        </div>
+    </div>
+</template>
+<style type="text/css">
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    position: relative;
+}
+.children-box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px; 
+}
+</style>
+```
+
+- 绝对定位+transform
+```js
+<template>
+    <div id="app">
+        <div class="box">
+            <div class="children-box"></div>
+        </div>
+    </div>
+</template>
+<style type="text/css">
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    position: relative;
+}
+.children-box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+}
+</style>
+```
