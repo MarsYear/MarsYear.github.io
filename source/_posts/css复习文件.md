@@ -193,13 +193,39 @@ description: 复习知识-CSS
 
 ----------------
 
+# CSS权重计算
+> - 第一级：内联样式 如`style=""`，权重为1000
+> - 第二级：id选择器 如`#content`，权重为100
+> - 第三级：类选择器,伪类，属性选择器 如`.content`，权重为10
+> - 第四级：标签选择器，伪元素选择器 如`.div p`，权重为1
+>  + **`注意：`** 通用选择器(`*`)、子选择器(`>`)、相邻同胞选择器(`+`)，并不在这个等级中，所以他们的权重为0
+
+----------------
+
+# CSS像素单位
+- px像素(Pixel)：相对长度单位。像素px是相对于显示器分辨率的
+- em：相对长度单位。相对于当前父元素的字体尺寸。如果未设置，则相对于浏览器默认字体尺寸
+- rem：CSS3新增的相对单位。使用rem为元素设定字体大小时，仍是相对大小，但相对的只是HTML根元素
+- view width：是指可视窗口的宽度。假如宽度是1200px的话。那10vw就是120px
+- view height：是指可视窗口的高度。假如高度是1200px的话。那10vh就是120px
+
+-----------
+
 # position
 ## positon属性
 ### static
 > static是position的默认属性值。如果省略position属性，浏览器就认为该元素是static属性。
 > 这时浏览器会按照源码的顺序，决定每个元素的位置，这是'正常的页面流'每个块级元素占据自己的区块，互相之间不重叠，这个位置就是元素的默认位置。
 > **`要注意`** ：static定位所导致的元素位置，是浏览器决定的，所以这时候`top`,`right`,`bottom`,`left`，这四个属性无效。
-### absolute，relative,fixed
+
+### relative
+> 相对定位方式相对与父元素进行定位，准确的说是相对于父元素所剩余未被占用的空间进行定位。且会占用该元素在文档中初始的页面空间，即在使用top等属性进行移动后依旧不会改变其所占空间的位置，可以使用z-index在z轴方向进行移动
+
+### absolute
+> 绝对定位方式，脱离文档流，不会占用页面空间。以最近的不是static定位的父级元素进行参考来定位，如果所有父级都是static定位，那就以当前窗口作为参考来进行定位。可以使用top，bottom，left，right进行位置移动，亦可使用z-index在z轴上面进行移动。当元素为此定位时，如果该元素为内联元素，则会变为块级元素，即可以直接设置其宽和高的值；如果该元素为块级元素，则其宽度会由初始的100%变为auto。
+
+### fixed
+> 绝对定位方式，直接以浏览器窗口作为参考进行定位。其它特性同absolute定位。当父元素使用了transform的时候，会以父元素定位。
 
 --------
 
@@ -259,7 +285,9 @@ description: 复习知识-CSS
 
 -----------
 
-# Flex（阮一峰Flex布局教程）
+# Flex
+> [阮一峰Flex布局教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+
 ## Flex布局是什么
 > Flex是`Flexible Box`的缩写，意思是弹性布局。为盒状模型提供最大灵活度。任何一个元素都可以指定为flex布局。
 
@@ -388,13 +416,39 @@ description: 复习知识-CSS
 ### align-self属性
 > align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
 
-
+----------------
 
 # 常见的布局
-## 居中
-### 水平垂直居中方法
-- 定宽高
+> - 单列布局
+> - 两列自适应布局
+> - 三栏布局
+> - 粘连布局
+> [几种常见的CSS布局](https://juejin.cn/post/6844903710070407182)
 
+## 水平垂直居中
+### 行内居中布局
+> - 水平居中
+   + 行内元素可设置：text-align: center;
+   + flex布局设置父元素：display: flex; justify-content: center;
+  - 垂直居中
+   + 单行文本父元素确认高度：height === line-height
+   + 多行文本父元素确认高度：disaply: table-cell; vertical-align: middle;
+
+### 块级居中布局
+> - 水平居中
+   + 定宽: margin: 0 auto;
+   + 不定宽： 参考上诉例子中不定宽高例子。
+  - 垂直居中
+   + position: absolute设置left、top、margin-left、margin-to(定高)；
+   + position: fixed设置margin: auto(定高)；
+   + display: table-cell；
+   + transform: translate(x, y)；
+   + flex(不定高，不定宽)；
+   + grid(不定高，不定宽)，兼容性相对比较差； 
+
+### 定宽高
+
+#### 绝对定位和负值
 ```js
 <template>
     <div id="app">
@@ -423,7 +477,7 @@ description: 复习知识-CSS
 </style>
 ```
 
-- 绝对定位+transform
+#### 绝对定位 + transform
 ```js
 <template>
     <div id="app">
@@ -450,3 +504,289 @@ description: 复习知识-CSS
 }
 </style>
 ```
+
+#### 绝对定位 + top/right/bottom/left + margin
+```js
+<template>
+    <div id="app">
+        <div class="box">
+            <div class="children-box"></div>
+        </div>
+    </div>
+</template>
+<style type="text/css">
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    position: relative;
+}
+.children-box {
+    position: absolute;
+    display: inline;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: yellow;
+    margin: auto;
+    height: 100px;
+    width: 100px;
+}
+</style>
+
+```
+
+#### flex布局
+```js
+<template>
+    <div id="app">
+        <div class="box">
+            <div class="children-box"></div>
+        </div>
+    </div>
+</template>
+<style type="text/css">
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.children-box {
+    background: yellow;
+    height: 100px;
+    width: 100px;
+}
+</style>
+
+```
+
+#### grid布局（网格布局）
+> 要注意兼容性问题
+
+```js
+<template>
+    <div id="app">
+        <div class="box">
+            <div class="children-box"></div>
+        </div>
+    </div>
+</template>
+<style type="text/css">
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    display: grid;
+}
+.children-box {
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    margin: auto;
+}
+</style>
+
+```
+
+### 不定宽高
+
+#### 绝对定位 + transform
+```js
+<template>
+    <div id="app">
+        <div class="box">
+            <div class="children-box">111111</div>
+        </div>
+    </div>
+</template>
+<style type="text/css">
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    position: relative;
+}
+.children-box {
+   position: absolute;
+   background: yellow;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+</style>
+
+```
+
+#### table-cell
+```js
+<template>
+    <div id="app">
+        <div class="box">
+            <div class="children-box">111111</div>
+        </div>
+    </div>
+</template>
+<style type="text/css">
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.children-box {
+   background: yellow;
+   display: inline-block;
+}
+</style>
+
+```
+
+#### flex布局
+```js
+<template>
+    <div id="app">
+        <div class="box">
+            <div class="children-box">11111111</div>
+        </div>
+    </div>
+</template>
+<style type="text/css">
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.children-box {
+    background: yellow;
+}
+</style>
+
+```
+
+#### flex变异布局
+```js
+<template>
+    <div id="app">
+        <div class="box">
+            <div class="children-box">11111111</div>
+        </div>
+    </div>
+</template>
+<style type="text/css">
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    display: flex;
+}
+.children-box {
+    background: yellow;
+    margin: auto;
+}
+</style>
+
+```
+
+#### grid + flex布局
+```js
+<template>
+    <div id="app">
+        <div class="box">
+            <div class="children-box">11111111</div>
+        </div>
+    </div>
+</template>
+<style type="text/css">
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    display: grid;
+}
+.children-box {
+    background: yellow;
+    align-self: center;
+    justify-self: center;
+}
+</style>
+
+```
+
+#### grid + margin布局
+```js
+<template>
+    <div id="app">
+        <div class="box">
+            <div class="children-box">11111111</div>
+        </div>
+    </div>
+</template>
+<style type="text/css">
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    display: grid;
+}
+.children-box {
+    background: yellow;
+    margin: auto;
+}
+</style>
+
+```
+
+#### writing-mode属性布局
+```js
+<template>
+    <div id="app">
+        <div class="box">
+            <div class="children-box">
+                <p>11111</p>
+            </div>
+        </div>
+    </div>
+</template>
+<style type="text/css">
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    writing-mode: vertical-lr;
+    text-align: center;
+}
+
+.box>.children-box {
+    writing-mode: horizontal-tb;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.box>.children-box>p {
+    display: inline-block;
+    margin: auto;
+    text-align: left;
+    background: yellow;
+}
+</style>
+
+```
+
+# 动画实现
+## CSS3动画实践
+
+## CSS3动画性能优化
+
+## CSS3动画代替JS动画的好处
+
+# 盒子模型
